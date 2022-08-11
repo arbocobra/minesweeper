@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Minesweeper</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script src='script.js'></script>
+    <script src="https://kit.fontawesome.com/8f928c57cd.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="display">
+        <h1>Minesweeper</h1>
+        <div id="wrapper" class="wrapper">
+            <div class="square">
+                <!-- <div id="container" class="positionTop"></div> -->
+            </div>
+            <div id="container" class="positionTop"></div>
+        </div>
+        <div class="buttonWrap">
+            <button id="createBoard" class="run" onclick="beginGame()">Begin Game</button>
+            <!-- <button id="displayBoard" class="hidden" onclick="displayBoard(board)">And then show it</button> -->
+            <!-- <p id="bombs"></p> -->
+            <button id="resetBoard" class="hidden" onclick="resetBoard()">Reset</button>
+            <div id="count"></div>
+        </div>
+    </div>
+    <div id="overlay" class="hidden">
+        <div id ="textBox" class="textBox">
+            <div id="startGame" class="hidden">
+                <div onclick="closeOverlay(0)" class="close"><a href="">X</a></div>
+                <h2>Select Board</h2>
+                <div class="buttonRow">
+                    <button class="run" onclick="createBoard(5, 5)">5x5</button>
+                    <button class="run" onclick="createBoard(10, 20)">10x10</button>
+                    <button class="run" onclick="createBoard(15, 45)">15x15</button>
+                    <button class="run" onclick="createBoard(20, 80)">20x20</button>
+                </div>
+            </div>
+            <div id="winGame" class="hidden">
+                <h2>Win</h2>
+                <button onclick="closeOverlay(1)">Play Again</button>
+            </div>
+            <div id="loseGame" class="hidden">
+                <button onclick="closeOverlay(1)">Game Over</button>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">&copy; Natalie Rekai, 2022</div>
+</body>
+
+</html>
